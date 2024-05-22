@@ -9,18 +9,8 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function index(){
-        return view("products.index");
-    }
-
-    public function create(){
-        return view("products.create");
-    }
-    public function store(Request $request){
-      Product::create([
-        "name"=> $request->name,
-        "price"=> $request->price,
-        'descricao'=>$request->descricao
-      ]);
-    }
+  public function index(){
+    $products = Product::all();
+    return view("Home")->with('products',$products);
+  }
 }

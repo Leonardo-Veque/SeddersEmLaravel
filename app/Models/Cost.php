@@ -9,8 +9,8 @@ class Cost extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'description'];
-public function costs()
-{
-return $this->hasMany(Cost::class);
-}
+    public function costs()
+    {
+        return $this->hasMany(Cost::class);
+    }
 }
